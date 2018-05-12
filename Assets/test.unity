@@ -492,7 +492,6 @@ GameObject:
   - component: {fileID: 400119250}
   - component: {fileID: 400119249}
   - component: {fileID: 400119248}
-  - component: {fileID: 400119247}
   m_Layer: 0
   m_Name: CanvasUI
   m_TagString: Untagged
@@ -523,23 +522,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &400119247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 400119245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0a01d9b96312b45819f28e82fdc8f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panelCP: {fileID: 1681055389}
-  panelSC: {fileID: 2032013431}
-  contact: {fileID: 963173702}
-  email: {fileID: 1943549819}
-  isActiveCP: 0
-  isActiveSC: 0
 --- !u!114 &400119248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,7 +654,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 411519838}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1369049491}
+        m_MethodName: onMenuClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &411519838
@@ -1181,7 +1174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.109000005, y: 0.07148958}
   m_AnchorMax: {x: 0.20300001, y: 0.2054896}
-  m_AnchoredPosition: {x: 3.5, y: 4}
+  m_AnchoredPosition: {x: 26, y: 21.1}
   m_SizeDelta: {x: 4, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577068888
@@ -1365,7 +1358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22839063, y: 0.07148958}
   m_AnchorMax: {x: 0.319, y: 0.2054896}
-  m_AnchoredPosition: {x: -0.0010223389, y: 4}
+  m_AnchoredPosition: {x: 22.499249, y: 21.1}
   m_SizeDelta: {x: 8, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &799858621
@@ -1439,6 +1432,10 @@ Prefab:
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_MouseLook.lockCursor
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -1518,7 +1515,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 819222150}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1369049491}
+        m_MethodName: onExitCPClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &819222150
@@ -1764,7 +1772,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 963173703}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1369049491}
+        m_MethodName: onContactsClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &963173703
@@ -1949,7 +1968,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1045634598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1369049491}
+        m_MethodName: onExitCPClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1045634598
@@ -2184,12 +2214,14 @@ MonoBehaviour:
   menu: {fileID: 909795272}
   panelCP: {fileID: 1681055389}
   panelSC: {fileID: 2032013431}
-  panelCont: {fileID: 0}
-  panelEmail: {fileID: 0}
+  panelCont: {fileID: 662548211}
+  panelEmail: {fileID: 516721770}
   contact: {fileID: 963173702}
   email: {fileID: 1943549819}
   exit1: {fileID: 819222149}
   exit2: {fileID: 1045634597}
+  play: {fileID: 1413804554}
+  menuB: {fileID: 411519837}
 --- !u!4 &1369049492
 Transform:
   m_ObjectHideFlags: 0
@@ -2278,7 +2310,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1413804555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1369049491}
+        m_MethodName: onPlayClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1413804555
@@ -2783,10 +2826,10 @@ RectTransform:
   m_Father: {fileID: 400119246}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.08927344, y: 0.85139585}
-  m_AnchorMax: {x: 0.39157814, y: 0.9097708}
-  m_AnchoredPosition: {x: 1.5, y: 3.171997}
-  m_SizeDelta: {x: 0.1000061, y: -7.700012}
+  m_AnchorMin: {x: 0.10264406, y: 0.82864976}
+  m_AnchorMax: {x: 0.41364408, y: 0.85314685}
+  m_AnchoredPosition: {x: 0.2000122, y: 0.30000305}
+  m_SizeDelta: {x: -2.899994, y: -1.7000122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849588259
 MonoBehaviour:
@@ -3053,7 +3096,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1943549820}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1369049491}
+        m_MethodName: onEmailClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1943549820
