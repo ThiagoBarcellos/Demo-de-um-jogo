@@ -17,8 +17,7 @@ public class SceneManager : MonoBehaviour {
 
 	void Start () {
 
-        GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 2;
-        GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 2;
+        
 
         menu.SetActive (false);
 		panelCP.SetActive (false);
