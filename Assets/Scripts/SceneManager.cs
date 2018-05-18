@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SceneManager : MonoBehaviour {
 
@@ -16,7 +17,10 @@ public class SceneManager : MonoBehaviour {
 
 	void Start () {
 
-		menu.SetActive (false);
+        GetComponent<FirstPersonController>().m_MouseLook.XSensitivity = 2;
+        GetComponent<FirstPersonController>().m_MouseLook.YSensitivity = 2;
+
+        menu.SetActive (false);
 		panelCP.SetActive (false);
 		panelSC.SetActive (false);
 		panelCont.SetActive (false);
@@ -38,22 +42,29 @@ public class SceneManager : MonoBehaviour {
 		menuB.onClick.AddListener (onMenuClick);
 		Pplay.onClick.AddListener (onPrincipalPlayClick);
 
-	}
+       
+
+    }
 
 	void Update ()
 	{
 		CPSC ();
 
-		if (Input.GetKeyDown (KeyCode.Escape)) {
+   
+
+        if (Input.GetKeyDown (KeyCode.Escape)) {
 			if (isPaused == false) {
-				Time.timeScale = 0;
+				Time.timeScale = 0f;
 				menu.SetActive (true);
 				isPaused = true;
-			} else {
-				Time.timeScale = 1;
+                
+
+            } else {
+				Time.timeScale = 1f;
 				menu.SetActive (false);
 				isPaused = false;
-			}
+               
+            }
 
 		}
 	}
@@ -63,20 +74,26 @@ public class SceneManager : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (isActiveCP == false) {
 				panelCP.SetActive (true);
-				isActiveCP = true;
-			} else {
+                panelSC.SetActive(false);
+                isActiveCP = true;
+                isActiveSC = false;
+                
+            } else {
 				panelCP.SetActive (false);
 				isActiveCP = false;
-			}
+                
+            }
 		}
 		//turn on&off the suitcase screen
 		if (Input.GetKeyDown (KeyCode.Q)) {
 			
 			if (isActiveSC == false) {
 				panelSC.SetActive (true);
-				isActiveSC = true;
+                panelCP.SetActive(false);
+                isActiveSC = true;
+                isActiveCP = false;
 
-			} else { 
+            } else { 
 				panelSC.SetActive (false);
 				isActiveSC = false;
 
@@ -90,9 +107,9 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	public void onMenuClick (){
-		//go back to menu. does not save your progress (yet)
-		Application.LoadLevel(0);
-	}
+        //go back to menu. does not save your progress (yet)
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
 
 	public void onContactsClick () {
 		//this is inside "Cellphone". Go to Contacts screen.
@@ -111,7 +128,8 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	public void onPrincipalPlayClick() {
-		//play button inside Menu screen. it is in another scene.
-		Application.LoadLevel(1);
+        //play button inside Menu screen. it is in another scene.
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+		
 	}
 }
