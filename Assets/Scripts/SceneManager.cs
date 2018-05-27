@@ -9,7 +9,6 @@ public class SceneManager : MonoBehaviour {
 
 	public GameObject menu;
 	static bool isPaused = false;
-  
 
 	public GameObject panelCP, panelSC, panelCont, panelEmail;
 	public Button contact, email, exit1, exit2, play, menuB, Pplay;
@@ -17,6 +16,8 @@ public class SceneManager : MonoBehaviour {
 	bool isActiveSC = false;
 
 	void Start () {
+
+        
 
         menu.SetActive (false);
 		panelCP.SetActive (false);
@@ -48,7 +49,7 @@ public class SceneManager : MonoBehaviour {
 	{
 		CPSC ();
 
-        
+   
 
         if (Input.GetKeyDown (KeyCode.Escape)) {
 			if (isPaused == false) {
@@ -125,13 +126,9 @@ public class SceneManager : MonoBehaviour {
 		panelEmail.SetActive (false);
 	}
 
-    public void onPrincipalPlayClick()
-    {
+	public void onPrincipalPlayClick() {
         //play button inside Menu screen. it is in another scene.
-        
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-
-    }
-
-   
+		
+	}
 }

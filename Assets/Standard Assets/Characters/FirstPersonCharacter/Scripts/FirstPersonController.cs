@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
-using UnityEngine.UI;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -11,7 +10,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
-        public static FirstPersonController instance;
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -43,16 +41,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-        public Text messageToTake;
-        public float timeShowMessage;
-        private float currentTimeToShowMessage; 
-
 
         // Use this for initialization
         private void Start()
         {
-            instance = this;
-            messageToTake.gameObject.SetActive(false);
+            
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -89,16 +82,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
-
-            if (messageToTake.gameObject.activeSelf)
-            {
-                currentTimeToShowMessage += Time.deltaTime;
-                if(currentTimeToShowMessage>timeShowMessage){
-                    messageToTake.gameObject.SetActive(false);  
-                }
-            }
-
-           
         }
 
 
@@ -273,13 +256,5 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
-
-        public void ShowMessageToTake()
-        {
-            messageToTake.gameObject.SetActive(true);
-            currentTimeToShowMessage = 0;
-        }
-
-        
     }
 }
