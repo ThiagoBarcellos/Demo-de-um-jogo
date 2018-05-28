@@ -10,20 +10,23 @@ public class SceneManager : MonoBehaviour {
 	public GameObject menu;
 	static bool isPaused = false;
 
-	public GameObject panelCP, panelSC, panelCont, panelEmail;
-	public Button contact, email, exit1, exit2, play, menuB, Pplay;
+	MouseLook ML;
+
+	public GameObject panelCP, panelSC, panelCont, panelEmail, panelClueP;
+	public Button contact, email, exit1, exit2, play, menuB, Pplay, clueP;
 	bool isActiveCP = false;
 	bool isActiveSC = false;
 
 	void Start () {
-
-        
 
         menu.SetActive (false);
 		panelCP.SetActive (false);
 		panelSC.SetActive (false);
 		panelCont.SetActive (false);
 		panelEmail.SetActive (false);
+		panelClueP.SetActive (false);
+
+		clueP.gameObject.SetActive (false);
 
 		contact = contact.GetComponent<Button> ();
 		email = email.GetComponent<Button> ();
@@ -32,6 +35,7 @@ public class SceneManager : MonoBehaviour {
 		play = play.GetComponent<Button> ();
 		menuB = menuB.GetComponent<Button> ();
 		Pplay = Pplay.GetComponent<Button> ();
+		clueP = clueP.GetComponent<Button> ();
 
 		contact.onClick.AddListener (onContactsClick);
 		email.onClick.AddListener (onEmailClick);
@@ -40,8 +44,7 @@ public class SceneManager : MonoBehaviour {
 		play.onClick.AddListener (onPlayClick);
 		menuB.onClick.AddListener (onMenuClick);
 		Pplay.onClick.AddListener (onPrincipalPlayClick);
-
-       
+		clueP.onClick.AddListener (onPhotoClueClick);
 
     }
 
@@ -49,22 +52,18 @@ public class SceneManager : MonoBehaviour {
 	{
 		CPSC ();
 
-   
-
         if (Input.GetKeyDown (KeyCode.Escape)) {
 			if (isPaused == false) {
 				Time.timeScale = 0f;
 				menu.SetActive (true);
 				isPaused = true;
                 
-
             } else {
 				Time.timeScale = 1f;
 				menu.SetActive (false);
 				isPaused = false;
                
             }
-
 		}
 	}
 
@@ -80,12 +79,10 @@ public class SceneManager : MonoBehaviour {
             } else {
 				panelCP.SetActive (false);
 				isActiveCP = false;
-                
             }
 		}
 		//turn on&off the suitcase screen
 		if (Input.GetKeyDown (KeyCode.Q)) {
-			
 			if (isActiveSC == false) {
 				panelSC.SetActive (true);
                 panelCP.SetActive(false);
@@ -95,7 +92,6 @@ public class SceneManager : MonoBehaviour {
             } else { 
 				panelSC.SetActive (false);
 				isActiveSC = false;
-
 			}
 		}
 	}
@@ -129,6 +125,11 @@ public class SceneManager : MonoBehaviour {
 	public void onPrincipalPlayClick() {
         //play button inside Menu screen. it is in another scene.
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-		
 	}
+
+	public void onPhotoClueClick() {
+		//shows the photo to be cleaned. 
+			panelClueP.SetActive (true);
+			ML.SetCursorLock(false);
+		}
 }
