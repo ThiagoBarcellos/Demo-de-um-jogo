@@ -26,7 +26,7 @@ public class SceneManager : MonoBehaviour {
 		panelEmail.SetActive (false);
 		panelClueP.SetActive (false);
 
-		clueP.gameObject.SetActive (false);
+		//clueP.gameObject.SetActive (false);
 
 		contact = contact.GetComponent<Button> ();
 		email = email.GetComponent<Button> ();
@@ -129,6 +129,7 @@ public class SceneManager : MonoBehaviour {
 
 	public void onPhotoClueClick() {
 		//shows the photo to be cleaned. 
+			panelSC.SetActive(false);
 			panelClueP.SetActive (true);
 			ML.SetCursorLock(false);
 		}
