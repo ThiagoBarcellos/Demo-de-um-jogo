@@ -9,6 +9,7 @@ public class Brush : MonoBehaviour {
 
 	private Vector2 offset, pos;
 	public Canvas myCanvas;
+	public GameObject sujeira;
 	//Texture2D texture = new Texture2D(128, 128);
 
 	void Start(){
@@ -27,14 +28,14 @@ public class Brush : MonoBehaviour {
 		transform.position = myCanvas.transform.TransformPoint (pos);
 	}
 
-	void OnTriggerEnter2D(Collider coll){
-
+	void OnTriggerStay2D(Collider2D coll){
 		if (coll.gameObject.CompareTag ("dirt")) {
-			float sujeira = coll.GetComponent<CanvasGroup> ().alpha;
+			StartCoroutine (limparSujeira (1f));
+			/*float sujeira = coll.GetComponent<CanvasGroup> ().alpha;
 			for (float tempoFalta = 10f; tempoFalta > 0; tempoFalta -= 2.5f) {
 				StartCoroutine (limparSujeira (1f));
 				sujeira -= 2.5f;
-			}
+			}*/
 			/*if (sujeira > 0) {
 				yield return StartCoroutine (limparSujeira (4f));
 			}*/
@@ -48,7 +49,10 @@ public class Brush : MonoBehaviour {
 		}
 	}
 	private IEnumerator limparSujeira(float determinadoTempo){
+			if (sujeira.GetComponent<CanvasGroup> ().alpha > 0f) {
+			sujeira.GetComponent<CanvasGroup> ().alpha -= 2.5f;
 		yield return new WaitForSeconds (determinadoTempo);
+			}
 
 	}
 }

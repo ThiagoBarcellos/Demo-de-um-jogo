@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 195216699}
   - component: {fileID: 195216698}
   - component: {fileID: 195216701}
+  - component: {fileID: 195216702}
   m_Layer: 5
   m_Name: dirt
   m_TagString: dirt
@@ -389,10 +390,30 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 195216696}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!50 &195216702
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 195216696}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &365883861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCanvas: {fileID: 400119250}
+  sujeira: {fileID: 195216696}
 --- !u!114 &759888129
 MonoBehaviour:
   m_ObjectHideFlags: 0
