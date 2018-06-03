@@ -18,7 +18,6 @@ public class SceneManager : MonoBehaviour {
 	bool isActiveSC = false;
 
 	void Start () {
-
         menu.SetActive (false);
 		panelCP.SetActive (false);
 		panelSC.SetActive (false);
@@ -26,7 +25,7 @@ public class SceneManager : MonoBehaviour {
 		panelEmail.SetActive (false);
 		panelClueP.SetActive (false);
 
-		//clueP.gameObject.SetActive (false);
+		clueP.gameObject.SetActive (false);
 
 		contact = contact.GetComponent<Button> ();
 		email = email.GetComponent<Button> ();
@@ -54,6 +53,15 @@ public class SceneManager : MonoBehaviour {
 
         if (Input.GetKeyDown (KeyCode.Escape)) {
 			if (isPaused == false) {
+
+				panelCP.SetActive (false);
+				isActiveCP = false;
+
+				panelSC.SetActive (false);
+				isActiveSC = false;
+
+				panelClueP.SetActive (false);
+
 				Time.timeScale = 0f;
 				menu.SetActive (true);
 				isPaused = true;
@@ -64,6 +72,10 @@ public class SceneManager : MonoBehaviour {
 				isPaused = false;
                
             }
+		}
+
+		if (Clue.pegouFoto) {
+			clueP.gameObject.SetActive (true);
 		}
 	}
 
