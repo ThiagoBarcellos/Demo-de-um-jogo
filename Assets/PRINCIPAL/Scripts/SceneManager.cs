@@ -13,7 +13,7 @@ public class SceneManager : MonoBehaviour {
 	MouseLook ML;
 
 	public GameObject panelCP, panelSC, panelCont, panelEmail, panelClueP;
-	public Button contact, email, exit1, exit2, play, menuB, Pplay, clueP;
+	public Button contact, email, exit1, exit2, play, menuB, clueP;
 	bool isActiveCP = false;
 	bool isActiveSC = false;
 
@@ -33,7 +33,6 @@ public class SceneManager : MonoBehaviour {
 		exit2 = exit2.GetComponent<Button> ();
 		play = play.GetComponent<Button> ();
 		menuB = menuB.GetComponent<Button> ();
-		Pplay = Pplay.GetComponent<Button> ();
 		clueP = clueP.GetComponent<Button> ();
 
 		contact.onClick.AddListener (onContactsClick);
@@ -42,7 +41,6 @@ public class SceneManager : MonoBehaviour {
 		exit2.onClick.AddListener (onExitCPClick);
 		play.onClick.AddListener (onPlayClick);
 		menuB.onClick.AddListener (onMenuClick);
-		Pplay.onClick.AddListener (onPrincipalPlayClick);
 		clueP.onClick.AddListener (onPhotoClueClick);
 
     }
@@ -132,11 +130,6 @@ public class SceneManager : MonoBehaviour {
 		//this is inside "Cellphone". Exit Contacts&Email screens.
 		panelCont.SetActive (false);
 		panelEmail.SetActive (false);
-	}
-
-	public void onPrincipalPlayClick() {
-        //play button inside Menu screen. it is in another scene.
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
 	}
 
 	public void onPhotoClueClick() {
