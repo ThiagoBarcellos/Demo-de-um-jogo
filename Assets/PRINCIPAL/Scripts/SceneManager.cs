@@ -136,7 +136,8 @@ public class SceneManager : MonoBehaviour {
 
 	public void onPrincipalPlayClick() {
         //play button inside Menu screen. it is in another scene.
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+		Application.LoadLevel(1);
 	}
 
 	public void onPhotoClueClick() {

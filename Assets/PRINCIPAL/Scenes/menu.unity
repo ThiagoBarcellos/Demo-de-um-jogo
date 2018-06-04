@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &1288429479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +505,7 @@ MonoBehaviour:
   panelSC: {fileID: 0}
   panelCont: {fileID: 0}
   panelEmail: {fileID: 0}
+  panelClueP: {fileID: 0}
   contact: {fileID: 0}
   email: {fileID: 0}
   exit1: {fileID: 0}
@@ -512,6 +513,7 @@ MonoBehaviour:
   play: {fileID: 0}
   menuB: {fileID: 0}
   Pplay: {fileID: 2020529466}
+  clueP: {fileID: 0}
 --- !u!1 &1684140658
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,8 +839,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1998395002}
-        m_MethodName: PlayDelayed
-        m_Mode: 4
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
