@@ -115,6 +115,7 @@ public class SceneManager : MonoBehaviour {
 
 	public void onMenuClick (){
         //go back to menu. does not save your progress (yet)
+		Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 

@@ -9,7 +9,7 @@ using UnityEngine.Audio;
 
 public class MenuScene : MonoBehaviour {
 
-	public Button play;
+	/*public Button play;
 	public AudioClip[] auds;
 
 	private bool playNow = false;
@@ -24,7 +24,7 @@ public class MenuScene : MonoBehaviour {
 			(AudioClip)Resources.Load ("Sounds/audio 3.mp3"),
 			(AudioClip)Resources.Load ("Sounds/audio 4.mp3")};
 	}
-
+*/
 	public void OnMouseClick () {
 		//Debug.Log ("disgraça");
 		UnityEngine.SceneManagement.SceneManager.LoadScene (1);

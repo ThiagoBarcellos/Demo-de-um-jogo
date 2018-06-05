@@ -7,13 +7,13 @@ public class Clue : MonoBehaviour {
 
 	private bool canTake = false;
 	SceneManager SM;
-	public Text clickF;
+	public GameObject clickF;
 	private bool jaPegou = false;
 	public GameObject clue;
 	static public bool pegouFoto = false;
 
 	void Start () {
-		clickF = clickF.GetComponent<Text> ();
+		//clickF = clickF.GetComponent<Image> ();
 	}
 
 	void Update () {
@@ -27,11 +27,11 @@ public class Clue : MonoBehaviour {
 	}
 
 	public void OnTriggerStay (Collider col){
-	
 		if (jaPegou == false) {
 			if (col.gameObject.CompareTag ("Player") && jaPegou == false) {
 				canTake = true;
 				clickF.gameObject.SetActive (true);
+				GameObject.FindWithTag ("Fthingy").SetActive (true);
 			}
 		}
 	}
@@ -41,6 +41,7 @@ public class Clue : MonoBehaviour {
 		if (col.gameObject.CompareTag ("Player")) {
 			canTake = false;
 			clickF.gameObject.SetActive (false);
+			GameObject.FindWithTag ("Fthingy").SetActive (false);
 		}
 	}
 }
