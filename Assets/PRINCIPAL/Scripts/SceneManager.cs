@@ -141,7 +141,14 @@ public class SceneManager : MonoBehaviour {
 		Application.LoadLevel(1);
 	}
 
-	public void onPhotoClueClick() {
+    public void onPlay()
+    {
+        //play button inside Menu screen. it is in another scene.
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        Application.LoadLevel(2);
+    }
+
+    public void onPhotoClueClick() {
 		//shows the photo to be cleaned. 
 			panelSC.SetActive(false);
 			panelClueP.SetActive (true);

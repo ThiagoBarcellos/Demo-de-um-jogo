@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c8dfd457d03fdcb4ca1c13a3a3d3df25
+timeCreated: 1528168349
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Potatoes And Peas
+  fontNames:
+  - Potatoes And Peas
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
