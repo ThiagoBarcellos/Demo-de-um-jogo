@@ -30,14 +30,19 @@ public class TypeWrite : MonoBehaviour {
 
     IEnumerator ShowText()
     {
-       
-        for (int i = 0; i < fullText.Length; i++)
-        {
-                currentText = fullText.Substring(0, i);
-                this.GetComponent<Text>().text = currentText;
-                yield return new WaitForSeconds(Random.Range(0.05f, 0.09f));
-       
-        }
-
+		if (AudioSequence.elaFalando == false) {
+			for (int i = 0; i < fullText.Length; i++) {
+				currentText = fullText.Substring (0, i);
+				this.GetComponent<Text> ().text = currentText;
+				yield return new WaitForSeconds (Random.Range (0.05f, 0.09f));
+			}
+		} 
+		else {
+			for (int i = 0; i < fullText.Length; i++) {
+				currentText = fullText.Substring (0, i);
+				this.GetComponent<Text> ().text = currentText;
+				yield return new WaitForSeconds (Random.Range (0.05f, 0.06f));
+			}
+		}
     } 
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CircleCollider2D))]
 
@@ -38,8 +39,12 @@ public class Brush : MonoBehaviour {
 			yield return new WaitForSecondsRealtime (determinadoTempo);
 		} 
 		else if (sujeira.GetComponent<CanvasGroup> ().alpha == 0) {
-			yield return new WaitForSecondsRealtime (5f);
+			yield return new WaitForSecondsRealtime (2f);
 			fade.GetComponent<CanvasGroup> ().alpha += 0.05f;
+			if (fade.GetComponent<CanvasGroup> ().alpha == 1) {
+				yield return new WaitForSecondsRealtime (1f);
+				UnityEngine.SceneManagement.SceneManager.LoadScene (0);
+			}
 		}
 	}
 }
