@@ -16,6 +16,7 @@ public class SceneManager : MonoBehaviour {
 	public Button contact, email, exit1, exit2, play, menuB, Pplay, clueP;
 	bool isActiveCP = false;
 	bool isActiveSC = false;
+	bool isMenuActive = false;
 
 	void Start () {
         menu.SetActive (false);
@@ -51,7 +52,11 @@ public class SceneManager : MonoBehaviour {
 	{
 		CPSC ();
 
-        if (Input.GetKeyDown (KeyCode.Escape)) {
+		if (Input.GetKeyDown (KeyCode.Escape) && isMenuActive == false) {
+			Application.Quit ();
+		}
+
+		if (Input.GetKeyDown (KeyCode.P)) {
 			if (isPaused == false) {
 
 				panelCP.SetActive (false);
@@ -61,6 +66,8 @@ public class SceneManager : MonoBehaviour {
 				isActiveSC = false;
 
 				panelClueP.SetActive (false);
+
+				isMenuActive = true;
 
 				Time.timeScale = 0f;
 				menu.SetActive (true);
@@ -111,12 +118,14 @@ public class SceneManager : MonoBehaviour {
 	public void onPlayClick () {
 		//works just as fine as clicking Esc
 		menu.SetActive (false);
+		isMenuActive = false;
 	}
 
 	public void onMenuClick (){
         //go back to menu. does not save your progress (yet)
 		Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+		isMenuActive = true;
     }
 
 	public void onContactsClick () {
