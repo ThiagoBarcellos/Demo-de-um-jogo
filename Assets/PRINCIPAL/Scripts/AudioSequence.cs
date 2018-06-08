@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioSequence : MonoBehaviour {
-	public AudioClip[] auds;
-
+	
 	private bool playNow = false;
 	private int count = 0;
 	public AudioClip audio1;
 	public AudioClip audio2;
 	public AudioClip audio3;
 	public AudioClip audio4;
+	public AudioClip audioTocar;
 	public AudioSource audio;
 	public GameObject imagem1;
 	public GameObject imagem2;
@@ -31,6 +31,14 @@ public class AudioSequence : MonoBehaviour {
 		audio.clip = audio1;
 		audio.Play ();
 		yield return new WaitForSeconds (audio.clip.length);
+
+		yield return new WaitForSeconds (0.15f);
+
+		audio.clip = audioTocar;
+		audio.volume = 0.3f;
+		audio.Play ();
+		yield return new WaitForSeconds (audio.clip.length/2);
+		audio.volume = 1f;
 
 		yield return new WaitForSeconds (0.15f);
 

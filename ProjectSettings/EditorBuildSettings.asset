@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PRINCIPAL/Scenes/test.unity
     guid: 7e486a39537647446a199835a9ea7616
+  - enabled: 1
+    path: Assets/PRINCIPAL/Scenes/TelaFinal.unity
+    guid: fd3b117c81112f24e9c7200c93cc87c1

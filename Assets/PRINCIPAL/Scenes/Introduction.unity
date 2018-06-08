@@ -234,15 +234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d818763f2fdbc0244a87b0801b17cb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  auds:
-  - {fileID: 8300000, guid: ced554f321b8c4f49a52b92dd01feb97, type: 3}
-  - {fileID: 8300000, guid: 877777a45b0ea2841b6df34ceb3dd791, type: 3}
-  - {fileID: 8300000, guid: 6f5f0ec378b224f448d02a923e8cba05, type: 3}
-  - {fileID: 8300000, guid: 0beb575ba87578b4286d44d24bc1ee07, type: 3}
   audio1: {fileID: 8300000, guid: ced554f321b8c4f49a52b92dd01feb97, type: 3}
   audio2: {fileID: 8300000, guid: 877777a45b0ea2841b6df34ceb3dd791, type: 3}
   audio3: {fileID: 8300000, guid: 6f5f0ec378b224f448d02a923e8cba05, type: 3}
   audio4: {fileID: 8300000, guid: 0beb575ba87578b4286d44d24bc1ee07, type: 3}
+  audioTocar: {fileID: 8300000, guid: 6bcca5971fd1cb64c9907091e32e8047, type: 3}
   audio: {fileID: 55957035}
   imagem1: {fileID: 597663597}
   imagem2: {fileID: 180239425}

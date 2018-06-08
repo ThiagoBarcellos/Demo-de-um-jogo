@@ -43,7 +43,7 @@ public class Brush : MonoBehaviour {
 			fade.GetComponent<CanvasGroup> ().alpha += 0.05f;
 			if (fade.GetComponent<CanvasGroup> ().alpha == 1) {
 				yield return new WaitForSecondsRealtime (1f);
-				UnityEngine.SceneManagement.SceneManager.LoadScene (0);
+				UnityEngine.SceneManagement.SceneManager.LoadScene (3);
 			}
 		}
 	}
